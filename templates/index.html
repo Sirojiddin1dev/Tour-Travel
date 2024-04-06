@@ -33,32 +33,35 @@
       <!-- Main Content -->
     <main id="rlr-main" class="rlr-main--fixed-top">
       <section class="rlr-about rlr-section rlr-section__my">
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-6">
-              <!-- Section heading -->
-              <div class="rlr-section__title">
-                <h2 class="rlr-section__title--main">Our Vision</h2>
-                <span class="rlr-section__title--sub">Sost Brilliant reasons Emprise should be your one-stop-shop!</span>
-              </div>
-              <div class="row gy-5">
-                <div class="col-xl-6" data-aos="fade-up" data-aos-offset="250" data-aos-duration="500">
-                  <!-- Text card -->
-                  <div class="rlr-text-card rlr-text-card--numbered">
-                    <p class="rlr-text-card__desc">Etiam elementum ex vel tortor laoreet auctor. Aenean iaculis, ipsum eget eleifend ornare, arcu ante efficitur urna, id faucibus leo nunc sit amet elit.</p>
-                  </div>
-                </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="offset-xl-1 col-lg-5">
-              <div class="rlr-img rlr-img--dotted img-fluid">
-                <img class="img-fluid" src="./assets/images/about-01.jpg " alt=" image our vision" />
-              </div>
-            </div>
+      {% for ab in about %}
+      <div class="container">
+      <div class="row">
+        <div class="col-lg-6">
+        <!-- Section heading -->
+        <div class="rlr-section__title">
+          <h2 class="rlr-section__title--main">About Us</h2>
+          <h2 class="rlr-section__title--main">{{ab.title}}</h2>
+          <span class="rlr-section__title--sub">{{ab.description}}</span>
+        </div>
+        <div class="row gy-5">
+          <div class="col-xl-6" data-aos="fade-up" data-aos-offset="250" data-aos-duration="500">
+          <!-- Text card -->
+          <div class="rlr-text-card rlr-text-card--numbered">
+            <p class="rlr-text-card__desc">{{ab.text}}</p>
+          </div>
+          </div>
+          </div>
           </div>
         </div>
-      </section>
+        </div>
+        <div class="offset-xl-1 col-lg-5">
+        <div class="rlr-img rlr-img--dotted img-fluid">
+          <img class="img-fluid" src="{{ ab.image.url }} " alt="image our vision" />
+        </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+    </section>
     </main>
 {% endblock %}
