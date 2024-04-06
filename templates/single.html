@@ -7,74 +7,25 @@
       <div class="container-xxl">
         <article class="rlr-article rlr-article-single--v2">
           <header class="rlr-article__header">
-            <div class="rlr-article__header__timestamp">Published 09 April Jan 2022</div>
-            <h1 class="type-h1">A weekend in Nagarkot</h1>
-            <h6 class="type-sub-title">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat.</h6>
+            <div class="rlr-article__header__timestamp">{{ single_blog.created_at }}</div>
+            <h1 class="type-h1">{{ single_blog.title }}</h1>
+            <h6 class="type-sub-title">{{ single_blog.description }}</h6>
           </header>
           <div class="rlr-article__featured-photo">
-            <img src="./assets/images/blog-image--main.jpg" alt="Featured Photo" />
+            <img src="{{ single_blog.title_img.url }}" alt="Featured Photo" />
           </div>
           <div class="rlr-article__wrapper">
             <div class="content">
               <div class="content__highlight">
-                <h2 class="type-h3">About Nagarkot</h2>
-                <p class="type-lead">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec ullamcorper mattis lorem non. Ultrices praesent amet ipsum justo massa. Eu dolor aliquet risus gravida nunc at feugiat consequat purus. Non massa enim vitae duis mattis. Vel in ultricies vel
-                  fringilla.
-                </p>
-              </div>
               <figure>
-                <img src="./assets/images/blog-single-02.jpg" alt="Photo" />
+                <img src="{{ single_blog.single_img.url }}" alt="Photo" />
               </figure>
-              <p class="type-lead">Nunc commodo eros velit, vitae tempor purus laoreet in. Fusce a condimentum magna, sit amet ultricies nibh. Vivamus tristique enim non accumsan ornare. Cras tincidunt ultrices libero nec bibendum.</p>
-              <p class="type-lead">
-                Cras dignissim eros ullamcorper sapien porttitor, eget laoreet ipsum dapibus. Nulla tincidunt pulvinar ante, in sollicitudin massa iaculis quis. Praesent ac venenatis mi. Vivamus risus dui, convallis nec risus a, luctus gravida ipsum. Donec erat libero, euismod
-                nec quam nec, congue maximus urna. Fusce pharetra urna ut pharetra iaculis. In vitae venenatis sem, nec lacinia nibh. Pellentesque ac consectetur lectus.
-              </p>
-              <p class="type-lead">Mauris vitae bibendum enim. Curabitur luctus ligula purus, sit amet venenatis orcijar Vivamus tristique enim non accumsan ornare. Cras tincidunt ultrices libero nec bibendum.</p>
-              <blockquote>
-                <h5 class="type-h6-medium">Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.</h5>
-                <p class="type-body content-quote__author">— Sanjeev Jha, Railar Solutions</p>
-              </blockquote>
-              <h5 class="type-h6-medium">Things to note</h5>
-              <p class="type-lead">Nunc commodo eros velit, vitae tempor purus laoreet in. Fusce a condimentum magna, sit amet ultricies nibh. Vivamus tristique enim non accumsan ornare. Cras tincidunt ultrices libero nec bibendum.</p>
-              <div class="rlr-article__badges">
-                <span class="rlr-badge rlr-badge--left rlr-badge-- rlr-badge rlr-badge--left"> Nomad </span> <span class="rlr-badge rlr-badge--left rlr-badge-- rlr-badge rlr-badge--left"> Wanderer </span>
-                <span class="rlr-badge rlr-badge--left rlr-badge-- rlr-badge rlr-badge--left"> Off the Beat </span>
+              <p class="type-lead">{{ single_blog.text }}</p>
               </div>
             </div>
           </div>
         </article>
         <!-- Newsletter Subscription -->
-        <section class="rlr-section rlr-section__mt row align-items-center">
-          <div class="col-lg-6">
-            <div class="rlr-gallery--newsletter">
-              <div class="rlr-gallery--newsletter__thumbs">
-                <div class="rlr-gallery--newsletter__thumbs__col-1">
-                  <img src="./assets/images/rlr-newsletter-01.jpg" alt="gallery image" />
-                </div>
-                <div class="rlr-gallery--newsletter__thumbs__col-2">
-                  <img src="./assets/images/rlr-newsletter-02.jpg" alt="gallery image" />
-                  <img src="./assets/images/rlr-newsletter-03.jpg" alt="gallery image" />
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-6">
-            <div class="rlr-newsletter">
-              <div class="rlr-newsletter__content" data-aos="fade-down" data-aos-offset="250" data-aos-duration="700">
-                <div class="rlr-newsletter__subtitle">Subscribe For Offers</div>
-                <h2 class="rlr-newsletter__title">Adventures Calling You Guys!</h2>
-                <p>The Brilliant reasons Emprise should be your one-stop-shop!</p>
-                <form class="rlr-subscribe" data-aos="fade-up" data-aos-offset="250" data-aos-duration="700">
-                  <input type="email" class="rlr-subscribe__input" placeholder="Enter your email" />
-                  <button class="btn">Send Now!</button>
-                </form>
-                <p class="rlr-newsletter__ps">Expect a reply in 2-3 working days</p>
-              </div>
-            </div>
-          </div>
-        </section>
       </div>
     </main>
    {% endblock %}

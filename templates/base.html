@@ -52,7 +52,7 @@
             </li>
             <!-- Dropdown menu 1 -->
             <li class="navigation-item">
-              <a class="navigation-link" href="./home-page.html">Gallery</a>
+              <a class="navigation-link" href="{% url 'gallery_url' %}">Gallery</a>
             </li>
             <!-- Dropdown menu 2 -->
             <li class="navigation-item">
@@ -131,17 +131,17 @@
             </div>
             <!-- Footer social links -->
             <div class="rlr-footer__legal__row__col">
-              <a href="#">Linkedin</a>
+              <a href="{{ info.linkedin }}">Linkedin</a>
               <span class="separate">/</span>
-              <a href="#">Facebook</a>
+              <a href="{{ info.facebook }}">Facebook</a>
               <span class="separate">/</span>
-              <a href="#">Instagram</a>
+              <a href="{{ info.instagram }}">Instagram</a>
             </div>
           </div>
           <!-- Footer copyright -->
           <div class="rlr-footer__legal__row rlr-footer__legal__row--bottom">
             <div class="rlr-footer__legal__row__col">
-              <span>2022 © Railar Solutions</span>
+              <span>2024 © Railar Solutions</span>
             </div>
             <!-- Footer payment thumbs -->
           </div>

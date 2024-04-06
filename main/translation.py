@@ -3,5 +3,10 @@ from .models import *
 
 
 @register(Blog)
-class ProductsTranslationOptions(TranslationOptions):
-    fields = ('title', 'product_info', 'advert_text', )
+class BlogTranslationOptions(TranslationOptions):
+    fields = ('title', 'description', 'text', )
+
+
+@register(Category)
+class CategoryTranslationOptions(TranslationOptions):
+    fields = ('title', 'description', 'text', )
