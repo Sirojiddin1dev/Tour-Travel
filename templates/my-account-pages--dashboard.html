@@ -7,88 +7,14 @@
         <div class="rlr-section rlr-section__my">
           <div class="container">
             <div class="row">
-              <div class="col-sm-12 rlr-sidebar-menu__mobile">
-                <select class="rlr-sidebar-menu__sub-menu rlr-form-select" id="rlr-js-sub-menu" name="rlr-sub-menu">
-                  <option>Navigate to...</option>
-                  <option value="my-account-pages--dashboard">Dashboard</option>
-                  <option value="my-account-pages--order">Orders</option>
-                  <option value="my-account-pages--subscription">Subscriptions</option>
-                  <option value="my-account-pages--dashboard">Addresses</option>
-                  <option value="my-account-pages--dashboard">Payment Methods</option>
-                  <option value="my-account-pages--dashboard">Account Details</option>
-                  <option value="my-account-pages--dashboard">Logout</option>
-                </select>
-              </div>
-            </div>
-          </div>
-          <div class="container">
-            <div class="row">
-              <aside class="rlr-sidebar-menu col-lg-3 col-xs-12 mb-5">
-                <div class="rlr-sidebar-menu__wrapper">
-                  <nav class="rlr-sidebar-menu">
-                    <ul class="rlr-sidebar-menu__desktop">
-                      <li>
-                        <a class="rlr-sidebar-menu__link" href="my-account-pages--dashboard">
-                          <span class="rlr-sidebar-menu__link-icon"><i class="rlr-icon-font flaticon-carbon-dashboard"> </i></span>
-                          Dashboard
-                        </a>
-                      </li>
-                      <li>
-                        <a class="rlr-sidebar-menu__link active" href="my-account-pages--order">
-                          <span class="rlr-sidebar-menu__link-icon"><i class="rlr-icon-font flaticon-carbon-box"> </i></span>
-                          Orders
-                        </a>
-                      </li>
-                      <li>
-                        <a class="rlr-sidebar-menu__link" href="my-account-pages--subscription">
-                          <span class="rlr-sidebar-menu__link-icon"><i class="rlr-icon-font flaticon-carbon-money"> </i></span>
-                          Subscriptions
-                        </a>
-                      </li>
-                      <li>
-                        <a class="rlr-sidebar-menu__link" href="#">
-                          <span class="rlr-sidebar-menu__link-icon"><i class="rlr-icon-font flaticon-carbon-download"> </i></span>
-                          Downloads
-                        </a>
-                      </li>
-                      <li>
-                        <a class="rlr-sidebar-menu__link" href="#">
-                          <span class="rlr-sidebar-menu__link-icon"><i class="rlr-icon-font flaticon-carbon-location"> </i></span>
-                          Addresses
-                        </a>
-                      </li>
-                      <li>
-                        <a class="rlr-sidebar-menu__link" href="#">
-                          <span class="rlr-sidebar-menu__link-icon"><i class="rlr-icon-font flaticon-carbon-wallet"> </i></span>
-                          Payment methods
-                        </a>
-                      </li>
-                      <li>
-                        <a class="rlr-sidebar-menu__link" href="#">
-                          <span class="rlr-sidebar-menu__link-icon"><i class="rlr-icon-font flaticon-carbon-user"> </i></span>
-                          Account Details
-                        </a>
-                      </li>
-                      <li>
-                        <a class="rlr-sidebar-menu__link" href="#">
-                          <span class="rlr-sidebar-menu__link-icon"><i class="rlr-icon-font flaticon-carbon-logout"> </i></span>
-                          Logout
-                        </a>
-                      </li>
-                    </ul>
-                  </nav>
-                </div>
-              </aside>
               <div class="content col-lg-9 col-xs-12">
                 <div class="woocommerce-MyAccount-content">
-                  <h1 class="type-h3 rlr-data-table__title">Your Account</h1>
+                  <h1 class="type-h3 rlr-data-table__title">{% blocktrans %}Sizning Akkauntingiz{% endblocktrans %}</h1>
                   <div class="rlr-myaccount__wrapper">
                     <div class="woocommerce-MyAccount-content">
-                      <p>Hello <strong>admin</strong> (not <strong>admin</strong>? <a href="https://ui.emprise.tours/">Log out</a>)</p>
-                      <p>
-                        From your account dashboard you can view your <a href="https://ui.emprise.tours/">recent orders</a>, manage your <a href="https://ui.emprise.tours/">shipping and billing addresses</a>, and
-                        <a href="https://ui.emprise.tours/">edit your password and account details</a>.
-                      </p>
+                      <p>{% blocktrans %}Salom{% endblocktrans %} <strong>{{ user.username }}</strong> ({% blocktrans %}Siz emasmisiz{% endblocktrans %} <strong>{{ user.username }}</strong>? <a href="{% url 'logout_url' %}">{% blocktrans %}Chiqish{% endblocktrans %}</a>)</p>
+                      <p><strong>{% blocktrans %}Telefon raqamingiz{% endblocktrans %}: {{ user.phone_number }}</strong></p>
+                      <p><strong>{% blocktrans %}Elektron pochtangiz{% endblocktrans %}: {{ user.email }}</strong></p>
                     </div>
                   </div>
                 </div>

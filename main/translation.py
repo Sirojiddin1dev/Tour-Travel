@@ -9,4 +9,14 @@ class BlogTranslationOptions(TranslationOptions):
 
 @register(Category)
 class CategoryTranslationOptions(TranslationOptions):
+    fields = ('name',)
+
+
+@register(About)
+class AboutTranslationOptions(TranslationOptions):
     fields = ('title', 'description', 'text', )
+
+
+@register(Banner)
+class BannerTranslationOptions(TranslationOptions):
+    fields = ('title', 'description',)

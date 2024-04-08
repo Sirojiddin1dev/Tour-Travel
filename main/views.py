@@ -1,4 +1,4 @@
-from .models import Blog, Comment, About, Banner, Gallery, Info, User
+from .models import *
 from django.shortcuts import render, redirect
 from django.contrib.auth import login, logout, authenticate
 from django.db import IntegrityError
@@ -38,7 +38,7 @@ def login_view(request):
     return render(request, 'account-pages--login.html')
 
 
-def my_profile_view(request, pk):
+def my_profile_view(request):
     context = {
         'info': Info.objects.last(),
         'user': request.user
@@ -53,16 +53,21 @@ def logout_view(request):
 
 def index_view(request):
     context = {
-        'about': About.objects.all(),
+        'about': About.objects.all().order_by('-id')[:1],
+        'about1': About.objects.all().order_by('-id')[1:2],
+        'about2': About.objects.all().order_by('-id')[2:3],
         'banner': Banner.objects.all().order_by('-id')[:2],
-        'info': Info.objects.last()
+        'info': Info.objects.last(),
+        'user': request.user,
+        'blog': Blog.objects.all().order_by('-id')[:3]
     }
     return render(request, 'index.html', context)
 
 
 def blog_view(request):
     context = {
-        'blog': Blog.objects.all()
+        'blog': Blog.objects.all(),
+        'user': request.user
     }
     return render(request, 'blog-listings--no-sidebar.html', context)
 
@@ -70,7 +75,8 @@ def blog_view(request):
 def single_blog_view(request, pk):
     single_blog = Blog.objects.get(pk=pk)
     context = {
-        'single_blog': single_blog
+        'single_blog': single_blog,
+        'user': request.user
     }
     if request.method == 'POST':
         name = request.POST['name']
@@ -87,5 +93,30 @@ def single_blog_view(request, pk):
 def gallery_view(request):
     context = {
         'gallery': Gallery.objects.all(),
+        'user': request.user
     }
     return render(request, 'gallery-page.html', context)
+
+
+def set_contact_data(request):
+    context = {
+        'info': Info.objects.last(),
+        'user': request.user
+    }
+    if request.method == 'POST':
+        first_name = request.POST.get("first_name")
+        last_name = request.POST.get("last_name")
+        phone = request.POST.get("phone")
+        message = request.POST.get("message")
+        email = request.POST.get("email")
+        Contact.objects.create(
+            first_name=first_name,
+            last_name=last_name,
+            phone=phone,
+            message=message,
+            email=email,
+        )
+        print(first_name)
+        return redirect('set_contact_data')
+    return render(request, 'contact.html', context)
+

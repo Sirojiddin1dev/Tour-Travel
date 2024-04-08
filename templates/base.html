@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="description" content="Your vacation, tours and travel theme needs are all met at emprise." />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Tour Travel Website</title>
+    <title>{% blocktrans %}Sayohat sayti{% endblocktrans %}</title>
     <!-- Favicon -->
     <link rel="shortcut icon" type="image/png" href="{% static '/assets/favicon.ico' %}" />
     <!-- Plugins CSS -->
@@ -24,7 +24,7 @@
           <div class="navigation-brand-text">
             <div class="rlr-logo rlr-logo__navbar-brand rlr-logo--default">
               <a href="{% url 'index_url' %}">
-                <img src="{% static '/assets/svg/emprise-logo-dark.svg' %}" alt="#" class="" />
+                <img src="{% static '/assets/emprise-logo-dark.svg' %}" alt="#" class="" />
               </a>
             </div>
           </div>
@@ -37,7 +37,7 @@
             <div class="navigation-brand-text">
               <div class="rlr-logo rlr-logo__navbar-brand rlr-logo--default">
                 <a href="{% url 'index_url' %}">
-                  <img src="{% static '/assets/svg/emprise-logo-dark.svg' %}" alt="#" class="" />
+                  <img src="{% static '/assets/emprise-logo-dark.svg' %}" alt="#" class="" />
                 </a>
               </div>
             </div>
@@ -48,47 +48,68 @@
           <ul class="navigation-menu rlr-navigation__menu rlr-navigation__menu--main-links">
             <!-- Dropdown menu 1 -->
             <li class="navigation-item is-active">
-              <a class="navigation-link" href="{% url 'index_url' %}">Home</a>
+              <a class="navigation-link" href="{% url 'index_url' %}">{% blocktrans %}Bosh sahifa{% endblocktrans %}</a>
             </li>
             <!-- Dropdown menu 1 -->
             <li class="navigation-item">
-              <a class="navigation-link" href="{% url 'gallery_url' %}">Gallery</a>
+              <a class="navigation-link" href="{% url 'gallery_url' %}">{% blocktrans %}Galereya{% endblocktrans %}</a>
             </li>
             <!-- Dropdown menu 2 -->
             <li class="navigation-item">
-              <a class="navigation-link" href="{% url 'blog_url' %}"> Blog </a>
+              <a class="navigation-link" href="{% url 'blog_url' %}">{% blocktrans %}Blog{% endblocktrans %}</a>
             </li>
             <!-- Dropdown menu 2 -->
             <li class="navigation-item">
-              <a class="navigation-link" href="./contact.html"> Contact </a>
+              <a class="navigation-link" href="{% url 'set_contact_data' %}">{% blocktrans %}Biz bilan bog'lanish{% endblocktrans %}</a>
             </li>
           </ul>
+        <ul></ul><ul></ul><ul></ul><ul></ul><ul></ul><ul></ul><ul></ul><ul></ul><ul></ul>
+        <ul> <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+                <input name="next" type="hidden" value="{{ redirect_to }}">
+                <select name="language" onchange="this.form.submit()">
+                    {% get_current_language as LANGUAGE_CODE %}
+                    {% get_available_languages as LANGUAGES %}
+                    {% get_language_info_list for LANGUAGES as languages %}
+                    {% for language in languages %}
+                        <option value="{{ language.code }}" {% if language.code == LANGUAGE_CODE %} selected{% endif %}>
+                            {{ language.name_local }} ({{ language.code }})
+                        </option>
+                    {% endfor %}
+                </select>
+            </form></ul>
+            
           <!-- User actions menu -->
           <ul class="navigation-menu rlr-navigation__menu align-to-right">
             <!-- Language dropdown -->
-            <li class="navigation-item">
-              <a class="navigation-link" href="#">
-                <span class="d-lg-none d-xxl-block">English</span>
-              </a>
-            </li>
+                
+            {% if user.is_authenticated %}
             <!-- User account dropdown -->
             <li class="navigation-item">
-              <a class="navigation-link" href="#"> Sarah</a>
+           
+              <a class="navigation-link" href="{% url 'my_profile_url' %}"> {{ user.username }}</a>
               <ul class="navigation-dropdown">
                 <li class="navigation-dropdown-item">
-                  <a class="navigation-dropdown-link" href="./my-account-pages--dashboard.html">Profile</a>
+                  <a class="navigation-dropdown-link" href="{% url 'my_profile_url' %}">{% blocktrans %}Profil{% endblocktrans %}</a>
                 </li>
                 <li class="navigation-dropdown-item">
-                  <a class="navigation-dropdown-link" href="./search-results--no-sidebar.html">Favorites</a>
+                  <a class="navigation-dropdown-link" href="{% url 'login_url' %}">{% blocktrans %}Kirish{% endblocktrans %}</a>
+                </li>
+                <li class="navigation-dropdown-item">
+                  <a class="navigation-dropdown-link" href="{% url 'register_url' %}">{% blocktrans %}Ro'yxatdan o'tish{% endblocktrans %}</a>
                 </li>
                 <li class="navigation-dropdown-item">
                   <hr class="dropdown-divider rlr-dropdown__divider" />
                 </li>
                 <li class="navigation-dropdown-item">
-                  <a class="navigation-dropdown-link" href="./account-pages--login.html">Sign out</a>
+                  <a class="navigation-dropdown-link" href="{% url 'logout_url' %}">{% blocktrans %}Chiqish{% endblocktrans %}</a>
                 </li>
               </ul>
             </li>
+            {% else %}
+              <li class="navigation-dropdown-item">
+                  <a class="navigation-dropdown-link" href="{% url 'login_url' %}">{% blocktrans %}Kirish{% endblocktrans %}</a>
+                </li>
+            {% endif %}
           </ul>
         </div>
       </nav>
@@ -105,21 +126,20 @@
         <div class="rlr-footer__menu">
           <nav class="rlr-footer__menu__col">
             <!-- Footer menu col -->
-            <h4>Services</h4>
+            <h4>{% blocktrans %}Xizmatlar{% endblocktrans %}</h4>
             <ul>
-              <li><a href="#">Home</a></li>
-              <li><a href="#">Gallery</a></li>
-              <li><a href="#">Blog</a></li>
+              <li><a href="{% url 'index_url' %}">{% blocktrans %}Bosh sahifa{% endblocktrans %}</a></li>
+              <li><a href="{% url 'gallery_url' %}">{% blocktrans %}Galereya{% endblocktrans %}</a></li>
+              <li><a href="{% url 'blog_url' %}">{% blocktrans %}Blog{% endblocktrans %}</a></li>
             </ul>
           </nav>
           <nav class="rlr-footer__menu__col">
             <!-- Footer menu col -->
-            <h4>Adventures</h4>
             <ul>
-              <li><a href="#">Profile</a></li>
-              <li><a href="#">login</a></li>
-              <li><a href="#">Sign up</a></li>
-              <li><a href="#">Logout</a></li>
+              <li><a href="{% url 'my_profile_url' %}">{% blocktrans %}Profil{% endblocktrans %}</a></li>
+              <li><a href="{% url 'login_url' %}">{% blocktrans %}Kirish{% endblocktrans %}</a></li>
+              <li><a href="{% url 'register_url' %}">{% blocktrans %}Ro'yhatdan o'tish{% endblocktrans %}</a></li>
+              <li><a href="{% url 'logout_url' %}">{% blocktrans %}Chiqish{% endblocktrans %}</a></li>
             </ul>
           </nav>
         </div>
@@ -127,7 +147,7 @@
         <div class="rlr-footer__legal">
           <div class="rlr-footer__legal__row rlr-footer__legal__row--top">
             <div class="rlr-footer__legal__row__col">
-              <a href="#">Privacy Policy</a>
+              <a href="#">{% blocktrans %}Maxfiylik siyosati{% endblocktrans %}</a>
             </div>
             <!-- Footer social links -->
             <div class="rlr-footer__legal__row__col">
@@ -139,10 +159,6 @@
             </div>
           </div>
           <!-- Footer copyright -->
-          <div class="rlr-footer__legal__row rlr-footer__legal__row--bottom">
-            <div class="rlr-footer__legal__row__col">
-              <span>2024 © Railar Solutions</span>
-            </div>
             <!-- Footer payment thumbs -->
           </div>
         </div>

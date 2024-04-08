@@ -9,27 +9,19 @@
           <div class="container">
             <div class="row">
               <div class="col-lg-4 offset-lg-4">
-                <form class="rlr-authforms">
+                <form action="{% url 'login_url' %}" class="rlr-authforms" method="post">
+                    {% csrf_token %}
                   <div class="rlr-authforms__header">
-                    <img src="./assets/images/logos/Logomark.svg" alt="Logo" />
-                    <h2>Log in to your emprise</h2>
-                    <p>Welcome back! Please enter login details.</p>
+                    <img src="{% static '/assets/Logomark.svg' %}" alt="Logo" />
+                    <h2>{% blocktrans %}Kirish{% endblocktrans %}</h2>
                   </div>
                   <div class="rlr-authforms__form">
-                    <div class="rlr-authforms__inputgroup"><label class="rlr-form-label rlr-form-label--light required"> Email </label> <input type="text" autocomplete="off" class="form-control form-control--light" /></div>
-                    <div class="rlr-authforms__inputgroup"><label class="rlr-form-label rlr-form-label--light required"> Password </label> <input type="password" autocomplete="off" class="form-control form-control--light" /></div>
-                    <div class="rlr-authforms__forgotpassword">
-                      <div class="form-check-inline">
-                        <input class="form-check-input rlr-form-check-input" id="rlr-checkbox-1" type="checkbox" value="defaultValue" />
-                        <label class="rlr-form-label rlr-form-label--checkbox rlr-form-label--font-inherit rlr-form-label--bold" for="rlr-checkbox-1">Remember me on this device</label>
-                      </div>
-                      <a href="account-pages--forgot-password">Forgot password</a>
-                    </div>
-                    <button type="button" class="btn mb-3 rlr-button rlr-button--fullwidth rlr-button--primary">Sign in</button>
-                    <button type="button" class="btn mb-3 rlr-button rlr-button--fullwidth rlr-button--google">Sign in with Google</button>
+                    <div class="rlr-authforms__inputgroup"><label class="rlr-form-label rlr-form-label--light required"> {% blocktrans %}Foydalanuvchi nomi{% endblocktrans %} </label> <input type="text" autocomplete="off" name="username" class="form-control form-control--light" /></div>
+                    <div class="rlr-authforms__inputgroup"><label class="rlr-form-label rlr-form-label--light required"> {% blocktrans %}Parol{% endblocktrans %} </label> <input type="password" autocomplete="off" name="password" class="form-control form-control--light" /></div>
+                    <button type="submit" class="btn mb-3 rlr-button rlr-button--fullwidth rlr-button--primary">{% blocktrans %}Kirish{% endblocktrans %}</button>
                   </div>
                   <div class="rlr-authforms__notes">
-                    <p>Don’t have an account? <a href="account-pages--signup">Sign up</a></p>
+                    <p>{% blocktrans %}Hisobingiz yo'qmi?{% endblocktrans %}<a href="{% url 'register_url' %}">{% blocktrans %}Ro'yhatdan otish{% endblocktrans %}</a></p>
                   </div>
                 </form>
               </div>

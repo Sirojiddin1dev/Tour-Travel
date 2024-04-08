@@ -9,26 +9,26 @@
           <div class="container">
             <div class="row">
               <div class="col-lg-4 offset-lg-4">
-                <div class="rlr-authforms">
+                <form action="{% url 'register_url' %}" method="post">
+                    {% csrf_token %}
                   <div class="rlr-authforms__header">
-                    <img class="mb-2" src="./assets/images/logos/Logomark.svg" alt="Logo" />
-                    <h2>Create an account</h2>
-                    <p>Helps to access all features of the site.</p>
+                    <img class="mb-2" src="{% static '/assets/Logomark.svg' %}" alt="Logo" />
+                    <h2>{% blocktrans %}Hisob ochish{% endblocktrans %}</h2>
                   </div>
                   <div class="rlr-authforms__form">
-                    <div class="rlr-authforms__inputgroup"><label class="rlr-form-label rlr-form-label--light required"> Name </label> <input type="text" autocomplete="off" class="form-control form-control--light" /></div>
-                    <div class="rlr-authforms__inputgroup"><label class="rlr-form-label rlr-form-label--light required"> Email </label> <input type="text" autocomplete="off" class="form-control form-control--light" /></div>
+                    <div class="rlr-authforms__inputgroup"><label class="rlr-form-label rlr-form-label--light required"> {% blocktrans %}Foydalanuvchini nomi{% endblocktrans %} </label> <input type="text" autocomplete="off" class="form-control form-control--light" name="username" /></div>
+                    <div class="rlr-authforms__inputgroup"><label class="rlr-form-label rlr-form-label--light required"> {% blocktrans %}Email{% endblocktrans %} </label> <input type="text" autocomplete="off" class="form-control form-control--light" name="email" /></div>
+                    <div class="rlr-authforms__inputgroup"><label class="rlr-form-label rlr-form-label--light required">{% blocktrans %}Telefon Raqam{% endblocktrans %} </label> <input type="text" autocomplete="off" class="form-control form-control--light" name="phone_number" /></div>
                     <div class="rlr-authforms__inputgroup">
-                      <label class="rlr-form-label rlr-form-label--light required"> Password </label> <input type="password" autocomplete="off" class="form-control form-control--light" />
-                      <p class="help-text">Must be 8 characters or more.</p>
+                      <label class="rlr-form-label rlr-form-label--light required"> {% blocktrans %}Parol{% endblocktrans %}</label> <input type="password" autocomplete="off" class="form-control form-control--light" name="password" />
+                      <p class="help-text">{% blocktrans %}Parol 8 yoki undan ortiq belgidan iborat boʻlishi kerak.{% endblocktrans %}</p>
                     </div>
-                    <button type="button" class="btn rlr-button rlr-button--fullwidth rlr-button--primary">Sign in</button>
-                    <button type="button" class="btn rlr-button rlr-button--fullwidth rlr-button--google">Sign up with Google</button>
+                    <button type="submit" class="btn rlr-button rlr-button--fullwidth rlr-button--primary">{% blocktrans %}Ro'yhatdan o'tish{% endblocktrans %}</button>
                   </div>
                   <div class="rlr-authforms__notes">
-                    <p>Already have an account? <a href="account-pages--login">Log in</a></p>
+                    <p>{% blocktrans %}Hisobingiz bormi?{% endblocktrans %} <a href="{% url 'login_url' %}">{% blocktrans %}Kirish{% endblocktrans %}</a></p>
                   </div>
-                </div>
+                </form>
               </div>
             </div>
           </div>

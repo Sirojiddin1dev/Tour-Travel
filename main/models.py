@@ -1,10 +1,9 @@
 from django.db import models
-from django.contrib.auth.models import AbstractUser, UserManager
+from django.contrib.auth.models import AbstractUser
 from django.core.validators import RegexValidator
 
 
 class User(AbstractUser):
-    objects = UserManager()
     phone_number = models.CharField(max_length=13, verbose_name='Telefon raqam', null=True, blank=True, validators=[
         RegexValidator(
             regex='^[\+]9{2}8{1}[0-9]{9}$',
@@ -88,3 +87,18 @@ class Info(models.Model):
     phone_number = models.CharField(max_length=55)
     email = models.EmailField()
     address = models.CharField(max_length=155)
+
+
+class Contact(models.Model):
+    first_name = models.CharField(max_length=55)
+    last_name = models.CharField(max_length=55)
+    phone = models.CharField(max_length=55)
+    message = models.TextField()
+    email = models.EmailField( max_length=254)
+
+    def __str__(self):
+        return self.first_name
+
+    class Meta:
+        verbose_name = 'Contact'
+        verbose_name_plural = 'Contacts'

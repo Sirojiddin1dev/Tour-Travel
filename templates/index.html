@@ -4,7 +4,7 @@
 {% block content %}
     <!-- Main Content -->
     <main id="rlr-main" class="rlr-main--fixed-top">
-      <!-- Hero Banner -->
+      <!-- Hero Banner -->  
       <aside class="rlr-hero--half-mast">
         <div class="container">
           <div id="rlr_banner_slider" class="splide rlr-banner-splide rlr-banner-splide--v3">
@@ -33,26 +33,61 @@
       <!-- Main Content -->
     <main id="rlr-main" class="rlr-main--fixed-top">
       <section class="rlr-about rlr-section rlr-section__my">
-      {% for ab in about %}
+      
       <div class="container">
+       {% for ab in about %}
       <div class="row">
         <div class="col-lg-6">
         <!-- Section heading -->
         <div class="rlr-section__title">
-          <h2 class="rlr-section__title--main">About Us</h2>
           <h2 class="rlr-section__title--main">{{ab.title}}</h2>
           <span class="rlr-section__title--sub">{{ab.description}}</span>
         </div>
-        <div class="row gy-5">
-          <div class="col-xl-6" data-aos="fade-up" data-aos-offset="250" data-aos-duration="500">
-          <!-- Text card -->
-          <div class="rlr-text-card rlr-text-card--numbered">
-            <p class="rlr-text-card__desc">{{ab.text}}</p>
-          </div>
-          </div>
-          </div>
+        <div>
+            <p class="rlr-text-card__desc" >{{ab.text}}</p>
           </div>
         </div>
+        <div class="offset-xl-1 col-lg-5">
+        <div class="rlr-img rlr-img--dotted img-fluid">
+          <img class="img-fluid" src="{{ ab.image.url }} " alt="image our vision" />
+        </div>
+        </div>
+      </div><br><br><br><br>
+       {% endfor %}
+      </div>
+      <div class="container">
+          {% for ab in about1 %}
+              <div class="row">
+                <div class="col-lg-6">
+                <div class="rlr-img rlr-img--dotted img-fluid">
+                  <img class="img-fluid" src="{{ ab.image.url }} " alt="image our vision" />
+                </div>
+                </div>
+                <div class="col-lg-6">
+                <!-- Section heading -->
+                <div class="rlr-section__title">
+                  <h2 class="rlr-section__title--main">{{ab.title}}</h2>
+                  <span class="rlr-section__title--sub">{{ab.description}}</span>
+                </div>
+                <div>
+                    <p class="rlr-text-card__desc" >{{ab.text}}</p>
+                  </div>
+                </div>
+              </div>
+          {% endfor %}
+        </div><br><br><br><br>
+      <div class="container">
+          {% for ab in about2 %}
+      <div class="row">
+        <div class="col-lg-6">
+        <!-- Section heading -->
+        <div class="rlr-section__title">
+          <h2 class="rlr-section__title--main">{{ab.title}}</h2>
+          <span class="rlr-section__title--sub">{{ab.description}}</span>
+        </div>
+        <div>
+            <p class="rlr-text-card__desc" >{{ab.text}}</p>
+          </div>
         </div>
         <div class="offset-xl-1 col-lg-5">
         <div class="rlr-img rlr-img--dotted img-fluid">
@@ -60,8 +95,28 @@
         </div>
         </div>
       </div>
+      {% endfor %}
     </div>
-    {% endfor %}
+      <br><br>
+      <h2 style="text-align: center;">{% blocktrans %}Bizning bloglarimiz{% endblocktrans %}</h2>
+       <div class="row rlr-search-results-page__card-wrapper">
+       
+           {% for i in blog %}
+               <div class="col-md-6 col-lg-4">
+               <article class="rlr-postcard"><img class="rlr-postcard__thumbnail" src="{{ i.title_img.url }}" alt="blog image" /><div class="rlr-postcard__summary">
+                   <span class="rlr-postcard__author">{{ i.created_at }}</span>
+                   <a href="{% url 'single_blog_url' i.pk %}" class="rlr-product-card__anchor-title"><h2 class="rlr-product-card__title">{{ i.title }}</h2>
+                   </a>
+                   <p>{{ i.description }}</p>
+                   <div class="rlr-product-card__footer"><div class="rlr-product-card__icon-text-list">
+                       <a href="#" class="rlr-icon-text rlr-icon-text--anchor rlr-icon-text__anchor rlr-product-card__icon-text"> <i class="rlr-icon-font flaticon-check"> </i> <span class="rlr-postcard__tag">{{ i.category.name }}</span> </a>
+                   </div>
+                   </div>
+               </div>
+               </article>
+           </div>
+           {% endfor %}
+       </div>
     </section>
     </main>
 {% endblock %}

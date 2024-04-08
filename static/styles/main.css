@@ -4949,6 +4949,8 @@ i[class^="flaticon-"]:before {
   fill: var(--brand);
   stroke: var(--white);
 }
+
+
 .rlr-navigation .rlr-svg-icon__header-language svg {
   fill: none;
   stroke: var(--body-color);
@@ -7269,7 +7271,7 @@ i[class^="flaticon-"]:before {
 }
 .rlr-text-card__desc {
   color: var(--body-color);
-  margin-bottom: 0;
+  margin-left:;
 }
 .rlr-text-card--numbered .rlr-text-card__title {
   background-color: var(--brand);
@@ -14170,3 +14172,5 @@ span.select2-selection__rendered {
 .rlr-main--fixed-top {
   margin-top: 100px;
 }
+
+
