@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2024-04-08 15:57+0500\n"
+"POT-Creation-Date: 2024-04-09 08:58+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -48,8 +48,8 @@ msgstr ""
 
 #: .\templates\account-pages--login.html:16
 #: .\templates\account-pages--login.html:21
-#: .\templates\account-pages--signup.html:29 .\templates\base.html:95
-#: .\templates\base.html:109 .\templates\base.html:138
+#: .\templates\account-pages--signup.html:29 .\templates\base.html:91
+#: .\templates\base.html:106 .\templates\base.html:136
 msgid "Kirish"
 msgstr "Login"
 
@@ -90,7 +90,7 @@ msgstr "Phone Number"
 msgid "Parol 8 yoki undan ortiq belgidan iborat boʻlishi kerak."
 msgstr "Password must be 8 or more characters."
 
-#: .\templates\account-pages--signup.html:26 .\templates\base.html:139
+#: .\templates\account-pages--signup.html:26 .\templates\base.html:137
 msgid "Ro'yhatdan o'tish"
 msgstr "Register"
 
@@ -102,44 +102,47 @@ msgstr "Do you have an account?"
 msgid "Sayohat sayti"
 msgstr "Tour Travel Website"
 
-#: .\templates\base.html:51 .\templates\base.html:129
-msgid "Bosh sahifa"
-msgstr "Home"
-
-#: .\templates\base.html:55 .\templates\base.html:130
+#: .\templates\base.html:51 .\templates\base.html:128
 msgid "Galereya"
 msgstr "Gallery"
 
-#: .\templates\base.html:59 .\templates\base.html:131
+#: .\templates\base.html:55 .\templates\base.html:129
 #: .\templates\blog-listings--no-sidebar.html:12
 msgid "Blog"
 msgstr "Blog"
 
-#: .\templates\base.html:63 .\templates\contact.html:10
-msgid "Biz bilan bog'lanish"
-msgstr "Contact us"
+#: .\templates\base.html:59
+msgid "Bog'lanish"
+msgstr "Contact"
 
-#: .\templates\base.html:92 .\templates\base.html:137
+#: .\templates\base.html:88 .\templates\base.html:135
 msgid "Profil"
 msgstr "Profile"
 
-#: .\templates\base.html:98
+#: .\templates\base.html:94
 msgid "Ro'yxatdan o'tish"
 msgstr "Register"
 
-#: .\templates\base.html:104 .\templates\base.html:140
+#: .\templates\base.html:100 .\templates\base.html:138
 #: .\templates\my-account-pages--dashboard.html:15
 msgid "Chiqish"
 msgstr "Log out"
 
-
-#: .\templates\base.html:127
+#: .\templates\base.html:125
 msgid "Xizmatlar"
 msgstr "Services"
 
-#: .\templates\base.html:148
+#: .\templates\base.html:127
+msgid "Bosh sahifa"
+msgstr "Home"
+
+#: .\templates\base.html:146
 msgid "Maxfiylik siyosati"
 msgstr "Privacy Policy"
+
+#: .\templates\contact.html:10
+msgid "Biz bilan bog'lanish"
+msgstr "Contact us"
 
 #: .\templates\contact.html:28
 msgid "Salom, biz sizga yordam berishdan xursandmiz!"

@@ -1,0 +1,28 @@
+/*!  ==============================================================
+splide core import
+============================================================== **/
+@import "../../node_modules/@splidejs/splide/src/sass/core/foundation/animations";
+@import "../../node_modules/@splidejs/splide/src/sass/core/foundation/variables";
+@import "../../node_modules/@splidejs/splide/src/sass/core/object/objects/container";
+@import "../../node_modules/@splidejs/splide/src/sass/core/object/objects/list";
+@import "../../node_modules/@splidejs/splide/src/sass/core/object/objects/pagination";
+@import "../../node_modules/@splidejs/splide/src/sass/core/object/objects/root";
+@import "../../node_modules/@splidejs/splide/src/sass/core/object/objects/slide";
+@import "../../node_modules/@splidejs/splide/src/sass/core/object/objects/slider";
+@import "../../node_modules/@splidejs/splide/src/sass/core/object/objects/spinner";
+@import "../../node_modules/@splidejs/splide/src/sass/core/object/objects/track";
+@import "../../node_modules/@splidejs/splide/src/sass/core/object/modifiers/draggable";
+@import "../../node_modules/@splidejs/splide/src/sass/core/object/modifiers/fade";
+@import "../../node_modules/@splidejs/splide/src/sass/core/object/modifiers/rtl";
+@import "../../node_modules/@splidejs/splide/src/sass/core/object/modifiers/ttb";
+
+/*!  ==============================================================
+splide default import
+============================================================== **/
+@import "../../node_modules/@splidejs/splide/src/sass/themes/default/foundation/variables";
+@import "../../node_modules/@splidejs/splide/src/sass/themes/default/object/objects/arrow";
+@import "../../node_modules/@splidejs/splide/src/sass/themes/default/object/objects/pagination";
+@import "../../node_modules/@splidejs/splide/src/sass/themes/default/object/objects/progress";
+@import "../../node_modules/@splidejs/splide/src/sass/themes/default/object/modifiers/nav";
+@import "../../node_modules/@splidejs/splide/src/sass/themes/default/object/modifiers/rtl";
+@import "../../node_modules/@splidejs/splide/src/sass/themes/default/object/modifiers/ttb";

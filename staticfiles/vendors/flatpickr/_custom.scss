@@ -1,0 +1,21 @@
+/*
+ * Scss manually converted from .styl (stylus) file.
+ * Stylus functions/syntax => sass function/syntax:
+ *    alpha => rgba
+ */
+/*stylelint-disable*/
+$calendarBackground: var(--white);
+$calendarBorderColor: var(--gray-01);
+$monthForeground: var(--heading-color);
+$monthBackground: var(--white);
+$weekdaysBackground: var(--white);
+$weekdaysForeground: var(--body-color);
+
+// $dayForeground: rgb(white 0.95);
+$dayHoverBackground: hsl(220, 69%, 97%);
+$todayColor: var(--brand);
+$today_fg_color: var(--white);
+$selectedDayBackground: var(--brand);
+$todayColor: var(--brand);
+
+$arrow_hover_color: var(--brand);
