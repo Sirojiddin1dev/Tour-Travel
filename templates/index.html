@@ -100,9 +100,9 @@
       <br><br>
       <h2 style="text-align: center;">{% blocktrans %}Bizning bloglarimiz{% endblocktrans %}</h2>
        <div class="row rlr-search-results-page__card-wrapper">
-       
+
            {% for i in blog %}
-               <div class="col-md-6 col-lg-4">
+               <div class="col-lg-4">
                <article class="rlr-postcard"><img class="rlr-postcard__thumbnail" src="{{ i.title_img.url }}" alt="blog image" /><div class="rlr-postcard__summary">
                    <span class="rlr-postcard__author">{{ i.created_at }}</span>
                    <a href="{% url 'single_blog_url' i.pk %}" class="rlr-product-card__anchor-title"><h2 class="rlr-product-card__title">{{ i.title }}</h2>

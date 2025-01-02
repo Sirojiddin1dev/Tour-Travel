@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e65398a5-db61-4027-ac00-c30f08549328" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/a41a123f-f770-4a6c-81ec-d9178ca11f35.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/a41a123f-f770-4a6c-81ec-d9178ca11f35.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/home/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/home/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/locale/ru/LC_MESSAGES/django.po" beforeDir="false" afterPath="$PROJECT_DIR$/locale/ru/LC_MESSAGES/django.po" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -14,6 +19,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="InvalidFacetManager">
+    <ignored-facets>
+      <facet id="Tour_Travel/invalid/Django" />
+    </ignored-facets>
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -74,7 +84,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-d68999036c7f-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.14475.56" />
+        <option value="bundled-python-sdk-67fca87a943a-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.11799.259" />
       </set>
     </attachedChunks>
   </component>
@@ -89,7 +99,11 @@
       <workItem from="1712505034513" duration="1416000" />
       <workItem from="1712558207234" duration="9842000" />
       <workItem from="1712575757292" duration="7789000" />
-      <workItem from="1712638524951" duration="2780000" />
+      <workItem from="1712638524951" duration="6882000" />
+      <workItem from="1712650693571" duration="310000" />
+      <workItem from="1712718944705" duration="1796000" />
+      <workItem from="1712903010643" duration="1272000" />
+      <workItem from="1713177079201" duration="1048000" />
     </task>
     <servers />
   </component>
